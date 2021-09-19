@@ -19,7 +19,7 @@ class NonDecreasingPlots(HarvesterConditionChecker):
         self._max_farmed_plots = 0
         # When copying plots it's common that plots decrease by 1 temporarily
         # by setting the default threshold to 2, we can avoid false alarms
-        self._decrease_warn_threshold = 2
+        self._decrease_warn_threshold = 4
 
     def check(self, obj: HarvesterActivityMessage) -> Optional[Event]:
         if obj.total_plots_count > self._max_farmed_plots:
